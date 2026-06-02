@@ -864,6 +864,467 @@ footer{
 }
 .td-expand-body,.cup-section{opacity:1!important;transform:none!important}
 
+
+/* ══════ ZETA / TACHYON TEARDOWN STYLES ══════ */
+
+  .zeta-wrap {
+    --ink: #0d0d0d;
+    --paper: #f5f0e8;
+    --accent: #c9382c;
+    --blue: #1a3a5c;
+    --muted: #6b6560;
+    --rule: #d4cfc6;
+    --white: #ffffff;
+    --mono: 'IBM Plex Mono', monospace;
+    --display: 'Playfair Display', Georgia, serif;
+    --body: 'DM Sans', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--body);
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* MASTHEAD */
+  .masthead {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 64px 48px 52px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .masthead-inner { max-width: 980px; margin: 0 auto; position: relative; }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+  }
+
+  .masthead h1 {
+    font-family: var(--display);
+    font-size: clamp(38px, 6vw, 68px);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+
+  .masthead h1 em { color: var(--accent); font-style: normal; }
+
+  .masthead-sub {
+    font-size: 17px;
+    font-weight: 300;
+    color: #a8a09a;
+    max-width: 560px;
+    line-height: 1.6;
+    margin-bottom: 36px;
+  }
+
+  .meta-row {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 24px;
+  }
+
+  .meta-item { display: flex; flex-direction: column; gap: 3px; }
+  .meta-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: #5a5450; }
+  .meta-value { font-size: 13.5px; font-weight: 500; color: var(--paper); }
+
+  .decor-circle {
+    position: absolute; right: -80px; top: -80px;
+    width: 340px; height: 340px;
+    border: 1px solid rgba(201,56,44,0.1);
+    border-radius: 50%; pointer-events: none;
+  }
+
+  /* TOC */
+  .toc {
+    background: var(--blue);
+    overflow-x: auto;
+  }
+  .toc-inner {
+    max-width: 980px; margin: 0 auto;
+    display: flex; padding: 0 48px;
+  }
+  .toc-link {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    padding: 15px 18px; white-space: nowrap;
+    text-decoration: none; display: block;
+    border-right: 1px solid rgba(255,255,255,0.08);
+    transition: color 0.2s, background 0.2s;
+  }
+  .toc-link:first-child { border-left: 1px solid rgba(255,255,255,0.08); }
+  .toc-link:hover { color: white; background: rgba(255,255,255,0.07); }
+
+  /* LAYOUT */
+  .page { max-width: 980px; margin: 0 auto; padding: 0 48px; }
+
+  section {
+    padding: 72px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  section:last-of-type { border-bottom: none; }
+
+  .sec-head {
+    display: flex; align-items: baseline;
+    gap: 16px; margin-bottom: 40px;
+  }
+  .sec-num {
+    font-family: var(--mono); font-size: 11px;
+    color: var(--accent); letter-spacing: 0.12em;
+    flex-shrink: 0;
+  }
+
+  h2 {
+    font-family: var(--display);
+    font-size: clamp(24px, 3.2vw, 34px);
+    font-weight: 700; letter-spacing: -0.01em;
+    line-height: 1.15;
+  }
+
+  h3 {
+    font-family: var(--display);
+    font-size: 20px; font-weight: 700;
+    margin-top: 36px; margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+  h3:first-child { margin-top: 0; }
+
+  .label {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--blue); margin-bottom: 8px;
+    margin-top: 20px; display: block;
+  }
+
+  p { color: #2a2520; margin-bottom: 14px; font-size: 15.5px; line-height: 1.75; }
+  strong { font-weight: 600; color: var(--ink); }
+
+  ul, ol { padding-left: 20px; margin-bottom: 14px; }
+  li { margin-bottom: 7px; font-size: 15px; color: #2a2520; line-height: 1.65; }
+  li::marker { color: var(--accent); }
+
+  /* CALLOUTS */
+  .callout {
+    background: var(--ink); color: var(--paper);
+    padding: 24px 28px; margin: 28px 0;
+    border-left: 4px solid var(--accent);
+  }
+  .callout .c-label {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 8px; display: block;
+  }
+  .callout p { color: #c8c0b8; margin: 0; font-size: 14.5px; }
+  .callout strong { color: white; }
+
+  .note {
+    border: 1px solid var(--rule);
+    border-top: 3px solid var(--blue);
+    padding: 20px 24px; margin: 24px 0;
+    background: #fbf8f3;
+  }
+  .note p { font-size: 14.5px; margin: 0; }
+
+  /* VERIFIED BADGE */
+  .verified {
+    display: inline-block;
+    font-family: var(--mono); font-size: 9px;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 2px 7px; border-radius: 2px;
+    background: #e8f5ee; color: #2a7a3b;
+    border: 1px solid #b8dfc4;
+    margin-left: 6px; vertical-align: middle;
+  }
+  .inferred {
+    display: inline-block;
+    font-family: var(--mono); font-size: 9px;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 2px 7px; border-radius: 2px;
+    background: #fef5e7; color: #b8820a;
+    border: 1px solid #f0d090;
+    margin-left: 6px; vertical-align: middle;
+  }
+
+  /* GRIDS */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 28px 0; }
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin: 28px 0; }
+
+  .card {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    padding: 22px 24px;
+  }
+  .card-r { border-top: 3px solid var(--accent); }
+  .card-b { border-top: 3px solid var(--blue); }
+  .card .label { margin-top: 0; }
+  .card p, .card li { font-size: 14px; }
+
+  /* REAL STATS BLOCK */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px; margin: 28px 0;
+  }
+  .stat-card {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    padding: 20px 20px 16px;
+    position: relative; overflow: hidden;
+  }
+  .stat-card::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; right: 0; height: 2px;
+    background: var(--accent);
+  }
+  .stat-source {
+    font-family: var(--mono); font-size: 9px;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: #2a7a3b; margin-bottom: 6px;
+  }
+  .stat-num {
+    font-family: var(--display);
+    font-size: 28px; font-weight: 900;
+    color: var(--blue); line-height: 1;
+    margin-bottom: 6px;
+  }
+  .stat-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+  /* TABLES */
+  .tbl-wrap { overflow-x: auto; margin: 24px 0; border: 1px solid var(--rule); }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  thead { background: var(--ink); color: var(--paper); }
+  thead th {
+    padding: 13px 16px; text-align: left;
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500;
+  }
+  tbody tr { border-bottom: 1px solid var(--rule); }
+  tbody tr:nth-child(even) { background: #faf6ef; }
+  tbody tr:hover { background: #f0ebe0; }
+  tbody td { padding: 12px 16px; vertical-align: top; line-height: 1.55; color: #2a2520; }
+  tbody td:first-child { font-weight: 500; color: var(--ink); }
+
+  /* ARCHITECTURE STACK */
+  .arch { border: 1px solid var(--rule); margin: 24px 0; overflow: hidden; }
+  .arch-row {
+    display: grid; grid-template-columns: 160px 1fr;
+    border-bottom: 1px solid var(--rule);
+  }
+  .arch-row:last-child { border-bottom: none; }
+  .arch-name {
+    background: var(--ink); color: var(--paper);
+    padding: 16px 18px; font-family: var(--mono);
+    font-size: 10.5px; letter-spacing: 0.1em;
+    text-transform: uppercase; display: flex; align-items: center;
+  }
+  .arch-items {
+    padding: 14px 18px; background: var(--white);
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  }
+  .chip {
+    font-size: 12.5px; color: var(--blue);
+    background: #e8f0fa; padding: 3px 10px;
+    border-radius: 2px; font-weight: 500;
+  }
+
+  /* FLOW STEPS */
+  .flow { border: 1px solid var(--rule); margin: 24px 0; overflow: hidden; }
+  .flow-step {
+    display: grid; grid-template-columns: 52px 1fr;
+    border-bottom: 1px solid var(--rule);
+  }
+  .flow-step:last-child { border-bottom: none; }
+  .flow-n {
+    background: var(--blue); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--display); font-size: 18px; font-weight: 700;
+  }
+  .flow-body { padding: 16px 20px; background: var(--white); }
+  .flow-body strong { display: block; margin-bottom: 3px; font-size: 14.5px; }
+  .flow-body p { font-size: 13.5px; color: var(--muted); margin: 0; }
+
+  /* RISK ROWS */
+  .risk-wrap { margin: 24px 0; }
+  .risk-item {
+    display: grid; grid-template-columns: 190px 1fr 90px;
+    align-items: center; gap: 16px;
+    padding: 12px 0; border-bottom: 1px solid var(--rule);
+  }
+  .risk-item:last-child { border-bottom: none; }
+  .risk-name { font-size: 14px; font-weight: 500; }
+  .bar-bg { height: 5px; background: #e8e2d9; border-radius: 3px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 3px; }
+  .fill-high { background: var(--accent); }
+  .fill-med { background: #d4a017; }
+  .fill-low { background: #2a7a3b; }
+  .risk-tag { font-family: var(--mono); font-size: 10.5px; font-weight: 600; text-align: right; }
+  .tag-high { color: var(--accent); }
+  .tag-med { color: #d4a017; }
+  .tag-low { color: #2a7a3b; }
+
+  /* REC CARDS */
+  .rec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+  .rec {
+    border: 1px solid var(--rule); overflow: hidden;
+  }
+  .rec-head {
+    background: var(--blue); color: white;
+    padding: 12px 18px; display: flex; gap: 10px; align-items: center;
+  }
+  .rec-n { font-family: var(--mono); font-size: 11px; opacity: 0.55; }
+  .rec-title { font-size: 13.5px; font-weight: 600; }
+  .rec-body { padding: 16px 18px; background: var(--white); }
+  .rec-body p { font-size: 13.5px; color: #3a3530; margin-bottom: 8px; }
+  .rec-body p:last-child { margin-bottom: 0; }
+
+  /* VERDICT */
+  .verdict-section {
+    background: var(--ink); color: var(--paper);
+    padding: 64px 48px;
+  }
+  .verdict-section h2 { color: var(--paper); }
+  .verdict-section p { color: #b0a8a0; }
+  .verdict-quote {
+    font-family: var(--display); font-size: 21px;
+    font-style: italic; color: white;
+    line-height: 1.5; padding: 28px 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    margin: 32px 0 28px;
+  }
+  .verdict-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; margin-top: 28px; }
+  .v-col-label {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 14px;
+  }
+  .verdict-cols li { color: #a8a09a; font-size: 14px; margin-bottom: 8px; }
+
+  .q-list { list-style: none; padding: 0; margin: 20px 0; }
+  .q-list li {
+    padding: 14px 18px; background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-left: 3px solid var(--accent);
+    margin-bottom: 8px; font-size: 14px;
+    color: #c8c0b8; font-style: italic; line-height: 1.6;
+  }
+  .q-list li::before { display: none; }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink); color: #5a5450;
+    padding: 22px 48px; display: flex;
+    align-items: center; justify-content: space-between;
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.07em;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  footer .a { color: var(--accent); }
+
+  /* DATA DISCLAIMER */
+  .data-key {
+    display: flex; gap: 20px; flex-wrap: wrap;
+    padding: 14px 18px; background: #fbf8f3;
+    border: 1px solid var(--rule); margin: 0 0 32px;
+    font-size: 12.5px; color: var(--muted);
+    align-items: center;
+  }
+  .data-key span { display: flex; align-items: center; gap: 6px; }
+
+  /* SCROLL FADE */
+  .fade { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
+  .fade.on { opacity: 1; transform: none; }
+
+  /* SCREENSHOTS */
+  .screenshot-block {
+    margin: 32px 0;
+    border: 1px solid var(--rule);
+    overflow: hidden;
+    background: var(--white);
+  }
+  .screenshot-block img {
+    width: 100%; display: block;
+    border-bottom: 1px solid var(--rule);
+  }
+  .screenshot-caption {
+    padding: 16px 20px;
+    background: var(--white);
+  }
+  .screenshot-caption .cap-label {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 6px; display: block;
+  }
+  .screenshot-caption strong {
+    display: block; font-size: 14.5px; margin-bottom: 4px;
+  }
+  .screenshot-caption p {
+    font-size: 13.5px; color: var(--muted); margin: 0; line-height: 1.55;
+  }
+  .screenshot-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 20px; margin: 28px 0;
+  }
+  .screenshot-grid .screenshot-block { margin: 0; }
+
+  /* FRICTION SECTION */
+  .friction-item {
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin-bottom: 16px;
+    background: var(--white);
+  }
+  .friction-item .f-label {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 8px; display: block;
+  }
+  .friction-item strong {
+    display: block; font-size: 15px; margin-bottom: 8px;
+  }
+  .friction-item p {
+    font-size: 14px; color: #3a3530; margin-bottom: 8px;
+  }
+  .friction-item .f-source {
+    font-family: var(--mono); font-size: 10.5px;
+    color: var(--muted); font-style: italic;
+  }
+  .friction-item p:last-child { margin-bottom: 0; }
+
+  /* RESPONSIVE */
+  @media (max-width: 720px) {
+    .masthead { padding: 40px 20px 36px; }
+    .page { padding: 0 20px; }
+    .toc-inner { padding: 0 20px; }
+    .screenshot-grid { grid-template-columns: 1fr; }
+    .two-col, .three-col, .rec-grid, .verdict-cols { grid-template-columns: 1fr; }
+    .arch-row { grid-template-columns: 1fr; }
+    .arch-name { border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .risk-item { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 6px; text-align: center; }
+    .verdict-section { padding: 40px 20px; }
+  }
+
+/* Zeta fade: visible immediately inside portfolio expand body */
+.td-expand-body .fade { opacity: 1 !important; transform: none !important; }
+
 </style>
 </head>
 <body>
@@ -1664,13 +2125,985 @@ footer{
 
     <div class="td-card-grid">
 
+    <!-- ══════════════ ZETA CARD ══════════════ -->
+    <div class="td-expand-card" id="td-zeta-card" onclick="toggleTeardown('td-zeta-body','td-zeta-card')">
+      <div class="td-expand-top" style="background:linear-gradient(90deg,#c9382c,#1a3a5c)"></div>
+      <div class="td-expand-preview">
+        <div class="td-expand-brand">
+          <div class="td-expand-icon" style="background:#0d0d0d;border:1px solid rgba(201,56,44,0.35);display:flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:10px;flex-shrink:0">
+            <svg width="38" height="20" viewBox="0 0 76 24" xmlns="http://www.w3.org/2000/svg">
+              <text x="0" y="19" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="21" fill="#ffffff">Ze</text>
+              <text x="27" y="19" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="21" fill="#c9382c">ta</text>
+            </svg>
+          </div>
+          <div class="td-expand-info">
+            <div class="td-expand-name">Zeta</div>
+            <div class="td-expand-meta">Fintech · Banking-as-a-Service · B2B Platform</div>
+            <div class="td-expand-desc">Tachyon — the cloud-native credit card processing platform rewriting how banks issue and manage cards.</div>
+          </div>
+        </div>
+        <div class="td-expand-caret"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+      </div>
+      <div class="td-expand-tags">
+        <span class="tag tag-amber">Fintech</span>
+        <span class="tag tag-teal">BaaS</span>
+        <span class="tag tag-purple">Card Processing</span>
+        <span class="tag tag-amber">B2B Platform</span>
+      </div>
+      <div class="td-expand-body" id="td-zeta-body">
+        <div class="td-expand-inner">
+    <!-- ══════════════ ZETA TACHYON TEARDOWN ══════════════ -->
+    <div class="td-full-card" id="td-zeta-full" style="border:none;padding:0;margin:0;border-radius:0;background:transparent">
+      <div class="td-full-header">
+        <div class="td-full-brand">
+          <div class="td-brand-logo" style="background:#0d0d0d;border:1px solid rgba(201,56,44,0.45);display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:12px;flex-shrink:0">
+              <svg width="40" height="22" viewBox="0 0 76 26" xmlns="http://www.w3.org/2000/svg">
+                <text x="0" y="21" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="23" fill="#ffffff">Ze</text>
+                <text x="29" y="21" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="23" fill="#c9382c">ta</text>
+              </svg>
+            </div>
+          <div>
+            <div class="td-full-name">Zeta / Tachyon</div>
+            <div class="td-full-meta">Fintech · Banking-as-a-Service · B2B Platform · Cloud-Native Card Processing</div>
+          </div>
+        </div>
+      </div>
+      <div class="zeta-wrap">
+<div class="page">
+
+<!-- DATA KEY -->
+<div class="data-key fade" style="margin-top:32px">
+  <strong>Source Key:</strong>
+  <span><span class="verified">✓ verified</span> = sourced from Zeta's public site, blog, or case study</span>
+  <span><span class="inferred">~ inferred</span> = based on platform architecture, not a published number</span>
+</div>
+
+<!-- 01 SUMMARY -->
+<section id="summary" class="fade">
+  <div class="sec-head">
+    <span class="sec-num">01 /</span>
+    <h2>What's the one-line summary?</h2>
+  </div>
+
+  <p>Zeta is a company that builds software to help banks launch and run credit card programs. Their main product is called <strong>Tachyon</strong> — think of it as the engine that powers everything from approving your card purchase in real time, to calculating your reward points, to letting the bank configure a new offer without waiting months for their tech team.</p>
+
+  <p>Most banks today use older systems that were built in the 1980s and 90s. Those systems work, but they're slow to change and expensive to maintain. Zeta's pitch is: <em>move to us and you can do in weeks what used to take quarters.</em></p>
+
+  <div class="callout">
+    <span class="c-label">The plain-language version</span>
+    <p>Imagine a bank's card program is like a kitchen. Legacy processors gave banks a kitchen where every appliance is from a different brand, none of them talk to each other, and hiring a plumber takes six months. <strong>Zeta is offering a fully integrated, modern kitchen where everything works together out of the box.</strong> The catch: you have to move out of your old kitchen first, and that's the hard part.</p>
+  </div>
+
+  <div class="three-col">
+    <div class="card card-r">
+      <span class="label">The Problem They Solve</span>
+      <p>Legacy card platforms make it hard for banks to change anything quickly — new rewards, new fees, new controls. Everything needs a vendor ticket and months of waiting.</p>
+    </div>
+    <div class="card card-b">
+      <span class="label">Who Buys This</span>
+      <p>Large banks modernizing old systems. New-age fintechs scaling fast. Brands launching co-branded credit cards (like a retail chain partnering with a bank).</p>
+    </div>
+    <div class="card card-r">
+      <span class="label">How Zeta Makes Money</span>
+      <p>One-time fee to set up and migrate. Then a recurring fee per active card account, plus fees based on how many transactions run through the system.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 02 WHAT IS IT -->
+<section id="what" class="fade">
+  <div class="sec-head">
+    <span class="sec-num">02 /</span>
+    <h2>What exactly does Zeta do — and what's Tachyon?</h2>
+  </div>
+
+  <p>Zeta is the company. Tachyon is their core processing engine — the most important product in the suite. But over time they've built several named products that all plug into Tachyon:</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>What It Does (Plain English)</th>
+          <th>Who Uses It</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Tachyon</td>
+          <td>The engine. Handles card approvals, account balances, statements, loan management. This is the core.</td>
+          <td>The bank's backend systems</td>
+        </tr>
+        <tr>
+          <td>Neutrino</td>
+          <td>Pre-built mobile and web app layer. The actual app your cardholders use.</td>
+          <td>Cardholders</td>
+        </tr>
+        <tr>
+          <td>Elena</td>
+          <td>AI chatbot for customer support — answers questions, takes actions, gives insights.</td>
+          <td>Cardholders via chat/call</td>
+        </tr>
+        <tr>
+          <td>Saturn</td>
+          <td>The tooling for bank staff — support agents and back-office ops people.</td>
+          <td>Bank support teams</td>
+        </tr>
+        <tr>
+          <td>Luminos</td>
+          <td>Handles notifications (SMS, push, email) and the rewards/loyalty program.</td>
+          <td>Cardholders + bank marketing</td>
+        </tr>
+        <tr>
+          <td>Zeus</td>
+          <td>Data, reporting, and analytics. Think dashboards and business intelligence.</td>
+          <td>Bank product &amp; finance teams</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>So when someone says "the Zeta platform," they mean this whole family. Tachyon is the heart of it, but the others are what make it a complete, end-to-end product a bank can actually use without building everything else themselves.</p>
+
+  <h3>Who does what on this platform?</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Person</th>
+          <th>What They Need</th>
+          <th>What Frustrates Them Today</th>
+          <th>How Zeta Helps</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Bank Product Manager</td>
+          <td>Launch new offers fast</td>
+          <td>Every change needs IT and months of time</td>
+          <td>Self-serve configuration — do it yourself</td>
+        </tr>
+        <tr>
+          <td>Risk / Compliance</td>
+          <td>Catch fraud, stay audit-ready</td>
+          <td>Data lives in 5 different systems</td>
+          <td>One unified data model, cleaner controls</td>
+        </tr>
+        <tr>
+          <td>Finance / Ops</td>
+          <td>Month-end closes cleanly</td>
+          <td>Manual work to match transactions</td>
+          <td>More automated reconciliation</td>
+        </tr>
+        <tr>
+          <td>Support Agent</td>
+          <td>Answer "why was my card declined?" fast</td>
+          <td>Needs to check 3 systems to answer</td>
+          <td>Saturn gives one unified customer view</td>
+        </tr>
+        <tr>
+          <td>Cardholder</td>
+          <td>Card just works, balance is accurate</td>
+          <td>Balance shows wrong, confusing declines</td>
+          <td>Real-time balance updates, clear messages</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 03 PLATFORM STACK -->
+<section id="platform" class="fade">
+  <div class="sec-head">
+    <span class="sec-num">03 /</span>
+    <h2>How is the platform structured?</h2>
+  </div>
+
+  <p>Think of Tachyon as a stack of layers — each one handles a specific job, and they all share the same data. This is the big difference from legacy systems, where each layer is a separate vendor that has to constantly sync up with the others (and constantly fails to).</p>
+
+  <div class="arch">
+    <div class="arch-row">
+      <div class="arch-name">Channels</div>
+      <div class="arch-items">
+        <span class="chip">Mobile App (Neutrino)</span>
+        <span class="chip">Web Portal</span>
+        <span class="chip">Bank Admin Console</span>
+        <span class="chip">Partner APIs</span>
+      </div>
+    </div>
+    <div class="arch-row">
+      <div class="arch-name">Card Config</div>
+      <div class="arch-items">
+        <span class="chip">APR / Fee Rules</span>
+        <span class="chip">Credit Limits</span>
+        <span class="chip">Billing Cycle</span>
+        <span class="chip">Card Product Setup</span>
+      </div>
+    </div>
+    <div class="arch-row">
+      <div class="arch-name">Authorization</div>
+      <div class="arch-items">
+        <span class="chip">Real-time Approvals</span>
+        <span class="chip">Fraud Rules</span>
+        <span class="chip">Velocity Checks</span>
+        <span class="chip">Network Gateway</span>
+        <span class="chip">3D Secure</span>
+      </div>
+    </div>
+    <div class="arch-row">
+      <div class="arch-name">Ledger</div>
+      <div class="arch-items">
+        <span class="chip">Live Balance</span>
+        <span class="chip">Holds &amp; Pending</span>
+        <span class="chip">Statements</span>
+        <span class="chip">Payment Posting</span>
+      </div>
+    </div>
+    <div class="arch-row">
+      <div class="arch-name">Rewards</div>
+      <div class="arch-items">
+        <span class="chip">Points Accrual</span>
+        <span class="chip">Redemption</span>
+        <span class="chip">Promo Rules</span>
+        <span class="chip">Co-brand Partner Tracking</span>
+      </div>
+    </div>
+    <div class="arch-row">
+      <div class="arch-name">Settlement</div>
+      <div class="arch-items">
+        <span class="chip">Clearing</span>
+        <span class="chip">Reconciliation</span>
+        <span class="chip">Exception Queue</span>
+        <span class="chip">Network Files</span>
+      </div>
+    </div>
+    <div class="arch-row">
+      <div class="arch-name">Servicing</div>
+      <div class="arch-items">
+        <span class="chip">Saturn Support Center</span>
+        <span class="chip">Saturn Ops Center</span>
+        <span class="chip">Dispute Management</span>
+        <span class="chip">Elena AI Bot</span>
+      </div>
+    </div>
+    <div class="arch-row">
+      <div class="arch-name">Data &amp; Infra</div>
+      <div class="arch-items">
+        <span class="chip">Zeus Analytics</span>
+        <span class="chip">REST APIs + Webhooks</span>
+        <span class="chip">Cloud-native</span>
+        <span class="chip">Sandbox Environments</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="note">
+    <p><strong>Why the ledger layer matters most:</strong> In legacy systems, your account balance gets updated overnight in a batch job. So if you spend at 3pm, your "available balance" might only update the next morning. Zeta's ledger updates in real time, the moment a transaction happens. This sounds simple but it changes everything downstream — fraud rules are more accurate, support agents see the truth, and cardholders stop getting confused about their balance.</p>
+  </div>
+</section>
+
+<!-- 04 REAL NUMBERS -->
+<section id="realdata" class="fade">
+  <div class="sec-head">
+    <span class="sec-num">04 /</span>
+    <h2>What numbers are actually real?</h2>
+  </div>
+
+  <p>Every number below comes directly from Zeta's public website, blog posts, or published case studies.</p>
+
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-source">✓ zeta.tech homepage</div>
+      <div class="stat-num">25M+</div>
+      <div class="stat-desc">Cards live in market across all Zeta customers</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-source">✓ zeta.tech homepage</div>
+      <div class="stat-num">7</div>
+      <div class="stat-desc">Countries where Zeta-powered programs are live</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-source">✓ Sparrow case study</div>
+      <div class="stat-num">&lt;8 mo</div>
+      <div class="stat-desc">Sparrow went from idea to live card product in under 8 months</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-source">✓ Sparrow case study</div>
+      <div class="stat-num">97%</div>
+      <div class="stat-desc">Of Sparrow applicants got their card issued in under 3 seconds</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-source">✓ Sparrow case study</div>
+      <div class="stat-num">&lt;100ms</div>
+      <div class="stat-desc">App response time for every customer action on Sparrow</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-source">✓ Sparrow case study</div>
+      <div class="stat-num">~30%</div>
+      <div class="stat-desc">Estimated reduction in support agents needed, per Zeta's own estimate for Sparrow</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-source">✓ HDFC case study</div>
+      <div class="stat-num">12M+</div>
+      <div class="stat-desc">Cardholders on PayZapp by HDFC Bank, powered by Zeta</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-source">✓ zeta.tech homepage</div>
+      <div class="stat-num">1,700</div>
+      <div class="stat-desc">People working at Zeta (they call them "creators")</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <span class="c-label">Important Note on the ~30% Agent Reduction</span>
+    <p>Zeta published this as an <strong>estimate for Sparrow's program</strong>, not a guarantee across all customers. It's a directional indicator of operational efficiency — not a contractual benchmark. Use it as a talking point, not a hard commitment.</p>
+  </div>
+
+
+</section>
+
+<!-- 05 UX -->
+<section id="ux" class="fade">
+  <div class="sec-head">
+    <span class="sec-num">05 /</span>
+    <h2>What's the product experience actually like?</h2>
+  </div>
+
+  <p>All screenshots below are taken directly from Zeta's public website (zeta.tech) and their published case studies. No mockups, no AI-generated images. Where analysis is inferred from what the screen shows rather than a published claim, it's labelled accordingly.</p>
+
+  <h3>Tachyon Admin Interfaces — Product &amp; Configuration Center</h3>
+  <p>These two screens are from Zeta's "Product Center and Control Center" — the area where bank product managers configure card products: APR rules, billing cycles, fee structures, reward tiers, and so on. This is the heart of the "self-serve without IT" promise. <span class="verified">✓ from zeta.tech/us/platform/tachyon/intuitive-admin-web-interfaces</span></p>
+
+  <div class="screenshot-grid">
+    <div class="screenshot-block">
+      <img src="https://www.zeta.tech/wp-content/uploads/sites/2/2024/07/tai-product-center-control-center.webp" alt="Tachyon Product Center and Control Center admin interface" loading="lazy">
+      <div class="screenshot-caption">
+        <span class="cap-label">Product Center</span>
+        <strong>Card product configuration screen</strong>
+        <p>Shows config-as-code approach for managing financial product bundles — products, events, subscriptions, workflows. The tabbed structure suggests multiple product types are manageable from one interface. <span class="inferred">~ visual inference</span></p>
+      </div>
+    </div>
+    <div class="screenshot-block">
+      <img src="https://www.zeta.tech/wp-content/uploads/sites/2/2024/07/no-code-integration-platform-2.webp" alt="Tachyon no-code integration platform interface" loading="lazy">
+      <div class="screenshot-caption">
+        <span class="cap-label">Control Center</span>
+        <strong>No-code integration and workflow view</strong>
+        <p>Visual representation of integration and event flows. Designed so product teams can configure workflows without raising IT tickets. <span class="inferred">~ visual inference</span></p>
+      </div>
+    </div>
+  </div>
+
+  <h3>Finance Center — Ledger &amp; Accounting View</h3>
+  <p>The Finance Center gives bank finance teams a view into the double-entry accounting layer underneath Tachyon — journals, ledgers, P&amp;L, balance sheet, and trial balance. This is what replaces the manual reconciliation work that finance ops teams currently do across multiple spreadsheets and systems. <span class="verified">✓ from zeta.tech/us/platform/tachyon/intuitive-admin-web-interfaces</span></p>
+
+  <div class="screenshot-block">
+    <img src="https://www.zeta.tech/wp-content/uploads/sites/2/2024/07/tai-finance-center.webp" alt="Tachyon Finance Center dashboard" loading="lazy">
+    <div class="screenshot-caption">
+      <span class="cap-label">Finance Center</span>
+      <strong>Ledger, Balance Sheet, and P&amp;L view</strong>
+      <p>A structured accounting dashboard with configurable chart of accounts and voucher codes. The existence of this screen is itself significant — it means finance ops teams don't need to export data to Excel to do their daily work. <span class="inferred">~ visual inference</span></p>
+    </div>
+  </div>
+
+  <h3>End-of-Day Center</h3>
+  <p>This is the screen that replaces what banks call "EOD batch jobs" — the nightly processes that finalize the ledger, apply fees, compute interest, and close out the day. Zeta has built a UI to trigger and monitor these instead of them running invisibly in the background. <span class="verified">✓ from zeta.tech/us/platform/tachyon/intuitive-admin-web-interfaces</span></p>
+
+  <div class="screenshot-block">
+    <img src="https://www.zeta.tech/wp-content/uploads/sites/2/2024/07/tai-end-day-center.webp" alt="Tachyon End-of-Day Center interface" loading="lazy">
+    <div class="screenshot-caption">
+      <span class="cap-label">End-of-Day Center</span>
+      <strong>EOD process trigger and monitoring interface</strong>
+      <p>Shows programmable EOD workflows with a visual interface to trigger and track progress. The fact that this exists and is visible to the bank's own team — not just Zeta's infra team — is a meaningful transparency improvement over legacy systems. <span class="inferred">~ visual inference</span></p>
+    </div>
+  </div>
+
+  <h3>Saturn Support Center — Agent Interface</h3>
+  <p>Saturn is what bank support agents use when a cardholder calls in. All screenshots below are from Zeta's public product page for Saturn Support Center. <span class="verified">✓ from zeta.tech/us/platform/saturn-servicing/support-center</span></p>
+
+  <div class="screenshot-block">
+    <img src="https://www.zeta.tech/wp-content/uploads/sites/2/2024/08/saturn-support-center-banner-image-scaled.webp" alt="Saturn Support Center agent interface overview" loading="lazy">
+    <div class="screenshot-caption">
+      <span class="cap-label">Saturn Support Center — Overview</span>
+      <strong>Agent customer profile view</strong>
+      <p>Shows a unified customer record — the agent sees the cardholder's full profile in one place. This is directly contrasted with legacy setups where agents switch between 3–4 separate tools to answer a single question. <span class="inferred">~ visual inference</span></p>
+    </div>
+  </div>
+
+  <div class="screenshot-grid">
+    <div class="screenshot-block">
+      <img src="https://www.zeta.tech/wp-content/uploads/sites/2/2024/08/granular-views.webp" alt="Saturn granular account views" loading="lazy">
+      <div class="screenshot-caption">
+        <span class="cap-label">Saturn — Granular Views</span>
+        <strong>Account, card, transaction, and balance detail</strong>
+        <p>Agents can drill into accounts, cards, individual transactions, policies, statements, and balances from a single screen. The depth of data accessible here is what determines whether an agent can resolve a query without escalating. <span class="inferred">~ visual inference</span></p>
+      </div>
+    </div>
+    <div class="screenshot-block">
+      <img src="https://www.zeta.tech/wp-content/uploads/sites/2/2024/08/wide-scope-of-actions.webp" alt="Saturn wide scope of agent actions" loading="lazy">
+      <div class="screenshot-caption">
+        <span class="cap-label">Saturn — Agent Actions</span>
+        <strong>Block/unblock, PIN reset, dispute initiation</strong>
+        <p>Agents can act directly — freeze a card, reset a PIN, initiate a dispute — without escalating to a backend team. This is the "resolve it in one call" capability. <span class="inferred">~ visual inference</span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="screenshot-block">
+    <img src="https://www.zeta.tech/wp-content/uploads/sites/2/2024/08/audit-log.webp" alt="Saturn audit log interface" loading="lazy">
+    <div class="screenshot-caption">
+      <span class="cap-label">Saturn — Audit Log</span>
+      <strong>Complete record of every agent action taken</strong>
+      <p>Every action by every agent is logged with a timestamp. This is the compliance proof layer — regulators and internal risk teams can audit exactly who did what and when. <span class="inferred">~ visual inference</span></p>
+    </div>
+  </div>
+
+  <h3>Sparrow Case Study — Systems Stack &amp; Ops Lifecycle</h3>
+  <p>These images come directly from Zeta's published Sparrow case study blog post. They show the full integrated stack used to power Sparrow's card program, and the card operations lifecycle toolchain. <span class="verified">✓ from zeta.tech Sparrow blog, March 2024</span></p>
+
+  <div class="screenshot-grid">
+    <div class="screenshot-block">
+      <img src="https://www.zeta.tech/wp-content/uploads/sites/2/2024/03/SparrowBlog_SystemsStack-scaled.webp" alt="Sparrow card program systems stack powered by Zeta" loading="lazy">
+      <div class="screenshot-caption">
+        <span class="cap-label">Sparrow — Integrated Systems Stack</span>
+        <strong>All 14 systems and 8 services in one diagram</strong>
+        <p>Zeta's pre-integrated stack meant Sparrow didn't have to connect 14 separate vendors themselves. This is what enabled the 8-month launch — fewer integration points, fewer failure surfaces. <span class="verified">✓ verified — from Sparrow case study</span></p>
+      </div>
+    </div>
+    <div class="screenshot-block">
+      <img src="https://www.zeta.tech/wp-content/uploads/sites/2/2024/03/SparrowBlog_CardOpsLifecyle-scaled.webp" alt="Sparrow card operations lifecycle on Zeta platform" loading="lazy">
+      <div class="screenshot-caption">
+        <span class="cap-label">Sparrow — Card Ops Lifecycle</span>
+        <strong>Full card operations covered by Zeta's toolchain</strong>
+        <p>Shows how Zeta's products map to every stage of card operations — from onboarding through servicing, disputes, and analytics. This is the operational scope a bank gets when they migrate. <span class="verified">✓ verified — from Sparrow case study</span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="note">
+    <p><strong>The 30-second test for any card ops console:</strong> A support agent should be able to answer "why was this transaction declined, and what should the customer do?" in under 30 seconds without opening a second tool. Saturn's granular views and action scope suggest it's designed for this — but the real test is in a live demo with a real support workflow, not a product screenshot.</p>
+  </div>
+
+  <h3>Configuration governance — the under-discussed UX problem</h3>
+  <p>Zeta lets bank PMs change things like APR tiers, reward rates, and spending limits themselves, without IT involvement. That's powerful. But it also means a PM could accidentally launch the wrong promo to the wrong customer segment. <span class="inferred">~ inferred</span> The quality of the approval workflow, change preview, and rollback screen determines whether this configurability is actually safe to use at scale. This is the UX surface that matters most for compliance and risk teams — and it's the one Zeta hasn't publicly demoed in detail.</p>
+</section>
+
+<!-- 05b FRICTION -->
+<section id="friction" class="fade">
+  <div class="sec-head">
+    <span class="sec-num">05b /</span>
+    <h2>Publicly Reported UX &amp; Onboarding Friction</h2>
+  </div>
+
+  <p>This section only includes friction points reported in public sources — app store reviews, published case studies, or official technical write-ups. Where a problem has been publicly confirmed as resolved, it is excluded.</p>
+
+  <div class="callout">
+    <span class="c-label">Methodology</span>
+    <p>Sources checked: Apple App Store reviews for Sparrow Card, Trustpilot reviews for Sparrow, Zeta's own public blog and case studies, and an AWS case study (August 2025) co-authored by Zeta's own engineering team. Only friction explicitly described in these sources is included.</p>
+  </div>
+
+  <div class="friction-item">
+    <span class="f-label">Friction #1 — Cardholder Experience</span>
+    <strong>In-app purchases declined despite being listed as supported</strong>
+    <p>An Apple App Store reviewer for the Sparrow Card (built on Zeta/Neutrino) reported that in-app purchases were declined repeatedly, despite Sparrow's own support documentation listing in-app purchases as a supported use case. The reviewer noted that Sparrow's support team blamed the merchant rather than investigating the issue, and no resolution was offered.</p>
+    <p>This is a real cardholder trust failure — the gap between "the card should work here" and "the card doesn't work here" is exactly the kind of friction that drives churn, especially in a non-prime segment where cardholders have already been burned by other products.</p>
+    <p class="f-source">Source: Apple App Store, Sparrow Card App reviews (public). No public statement from Zeta or Sparrow confirming this was resolved.</p>
+  </div>
+
+  <div class="friction-item">
+    <span class="f-label">Friction #2 — Issuer Operations</span>
+    <strong>Zeta's own SRE team previously had fragmented observability — took 30+ minutes to identify incident root cause</strong>
+    <p>An AWS case study published in August 2025, co-authored by Zeta's own engineering team, explicitly describes a prior state where Zeta's Site Reliability Engineers had to "navigate through several disparate monitoring tools and siloed data" when credit card payment issues were reported. Incident response times exceeded 30 minutes.</p>
+    <p>This matters for bank customers because it means that when something went wrong on the platform, the people responsible for fixing it didn't have a clear, fast way to see what broke. Zeta has since built a unified observability layer (CSN on Amazon OpenSearch) that reduced mean time to resolution by 80% — from 30+ minutes to under 5 minutes.</p>
+    <p><strong>Current status:</strong> Resolved internally per the AWS case study. However, the fact that this fragmented monitoring state existed — and that it took until 2025 to fully address — is worth noting as context for any bank evaluating platform reliability history.</p>
+    <p class="f-source">Source: AWS Big Data Blog, August 20, 2025 — "Zeta reduces banking incident response time by 80% with Amazon OpenSearch Service observability." Co-authored by Zeta engineers.</p>
+  </div>
+
+  <div class="friction-item">
+    <span class="f-label">Friction #3 — Cardholder Support</span>
+    <strong>Sparrow customer support only available during business hours — no 24/7 channel</strong>
+    <p>Multiple Trustpilot reviews for Sparrow Card describe being unable to reach support outside business hours. One reviewer explicitly wrote that the "customer service number is always after business hours" and that email was the only option — with slow response times. For a credit card targeting underserved Americans who may work non-traditional hours, business-hours-only support is a real access gap.</p>
+    <p>This is a Sparrow product decision, not necessarily a Zeta platform limitation. But it surfaces a question: does Zeta's Saturn platform make it easy enough to staff and manage 24/7 support, or does the implementation cost/complexity make limited hours the default for early-stage issuers?</p>
+    <p class="f-source">Source: Trustpilot reviews for sparrowcard.com (public). No public confirmation of 24/7 support being added since reviews were posted.</p>
+  </div>
+
+  <div class="friction-item">
+    <span class="f-label">Friction #4 — Issuer Onboarding (Zeta's own acknowledgement)</span>
+    <strong>Lack of application status visibility causes cardholder drop-off during onboarding</strong>
+    <p>Zeta's own blog post ("Winning with Digital Issuance," January 2025) explicitly states: <em>"lack of visibility into their card application status often leads customers to drop out and apply elsewhere."</em> They frame this as an industry problem that issuers need to solve using Zeta's platform — but by calling it out, they're acknowledging it exists in real card onboarding flows, including potentially their own customers' implementations.</p>
+    <p>The fix they describe — real-time application tracking and pre-eligibility checks — is presented as a Zeta capability, suggesting it's available but not necessarily the default configuration for all issuers on the platform.</p>
+    <p class="f-source">Source: Zeta's own blog — "Winning with Digital Issuance," zeta.tech, January 2025.</p>
+  </div>
+
+</section>
+
+<!-- 06 FLOWS -->
+<section id="flows" class="fade">
+  <div class="sec-head">
+    <span class="sec-num">06 /</span>
+    <h2>How do the key flows actually work?</h2>
+  </div>
+
+  <p>These are the three most important product flows — what happens step by step, and where things can go wrong.</p>
+
+  <h3>1. Getting a new card (Onboarding)</h3>
+  <div class="flow">
+    <div class="flow-step">
+      <div class="flow-n">1</div>
+      <div class="flow-body">
+        <strong>You apply</strong>
+        <p>You fill out an application on the bank's app. The app calls Zeta's APIs to kick off the process.</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-n">2</div>
+      <div class="flow-body">
+        <strong>Credit check happens</strong>
+        <p>Zeta's system calls a credit bureau to check your score. <strong>Whether this happens in real time or overnight is a critical question</strong> — the Sparrow case study says 97% of applicants get a decision in under 3 seconds. <span class="verified">✓ verified</span></p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-n">3</div>
+      <div class="flow-body">
+        <strong>Account is created</strong>
+        <p>Your account is set up in the Tachyon ledger. Your credit limit, APR, billing cycle — all configured based on the card product rules.</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-n">4</div>
+      <div class="flow-body">
+        <strong>Virtual card issued instantly</strong>
+        <p>A digital card is generated right away. On Sparrow, this happens in under 3 seconds for most applicants. You can tap to pay before the physical card arrives. <span class="verified">✓ verified</span></p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-n">5</div>
+      <div class="flow-body">
+        <strong>Added to Apple Pay / Google Pay</strong>
+        <p>A token is created and pushed to your wallet. This step involves Apple/Google certification — it's one of the more technically complex parts and a common failure point to probe.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3>2. Swiping your card (Authorization)</h3>
+  <div class="flow">
+    <div class="flow-step">
+      <div class="flow-n">1</div>
+      <div class="flow-body">
+        <strong>You tap your card</strong>
+        <p>A message goes from the merchant's terminal → Visa/Mastercard network → Zeta's authorization engine. The clock starts.</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-n">2</div>
+      <div class="flow-body">
+        <strong>Tachyon checks your account</strong>
+        <p>It looks at your real-time balance and available credit. Because Zeta uses a live ledger, this is the <em>actual</em> number, not last night's batch. This is why the Sparrow app could show "credit returned immediately" after a payment. <span class="verified">✓ verified</span></p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-n">3</div>
+      <div class="flow-body">
+        <strong>Fraud check runs</strong>
+        <p>Rules check: has this card been used 10 times in the last hour? Is this merchant category blocked? Does the spend pattern look normal? All this runs in milliseconds.</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-n">4</div>
+      <div class="flow-body">
+        <strong>Approve or decline</strong>
+        <p>Decision goes back to the network and the merchant. If approved, the hold is placed on your balance immediately. The app response time on Sparrow is under 100ms for every customer action. <span class="verified">✓ verified</span></p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-n">5</div>
+      <div class="flow-body">
+        <strong>Rewards calculated separately</strong>
+        <p>Points are calculated after the authorization, not during it. This is intentional — you don't want complex rewards logic slowing down the split-second approval decision. <span class="inferred">~ inferred from architecture</span></p>
+      </div>
+    </div>
+  </div>
+
+  <h3>3. Disputing a transaction</h3>
+  <div class="flow">
+    <div class="flow-step">
+      <div class="flow-n">1</div>
+      <div class="flow-body">
+        <strong>You report a problem</strong>
+        <p>Via the app or by calling support. The transaction details — merchant, amount, date — are pre-loaded. You pick a reason (unauthorized / merchant didn't deliver / etc.).</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-n">2</div>
+      <div class="flow-body">
+        <strong>Provisional credit may be applied</strong>
+        <p>Depending on the dispute type, your account may be credited while the investigation happens. This is one of the highest-trust moments in card banking — getting this right matters a lot.</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-n">3</div>
+      <div class="flow-body">
+        <strong>Submitted to the card network</strong>
+        <p>Zeta's Saturn Ops Center has automated integration with Mastercard's dispute system (Mastercom) and Visa's (VRoll). <span class="verified">✓ verified — from Sparrow blog</span> This means less manual work for ops teams.</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-n">4</div>
+      <div class="flow-body">
+        <strong>Resolution</strong>
+        <p>Once the network decides, the provisional credit is either made permanent or reversed. The case is closed and the audit trail is stored.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 DX -->
+<section id="dx" class="fade">
+  <div class="sec-head">
+    <span class="sec-num">07 /</span>
+    <h2>What's it like for the developers building on this?</h2>
+  </div>
+
+  <p>When a bank's engineering team integrates with Zeta, how painful is it? This matters because integration speed directly affects how quickly the bank can launch and how much the implementation costs.</p>
+
+  <p>Zeta's developer pitch centers on one claim: <strong>"10x the API and events breadth"</strong> of other platforms. <span class="verified">✓ verified — from Sparrow blog</span> What this means practically is that almost every action in the platform — a balance change, a config update, a dispute status change — fires an API event that developers can hook into. That gives engineering teams more automation surface area than they'd get from legacy systems, which often only expose data through batch files.</p>
+
+  <div class="two-col">
+    <div class="card card-b">
+      <span class="label">What Makes Development Easier</span>
+      <ul>
+        <li>REST APIs — the standard modern format, familiar to any engineering team</li>
+        <li>Webhooks — real-time event notifications instead of polling for updates</li>
+        <li>Pre-integrated stack — modules like Saturn and Zeus come already connected to Tachyon</li>
+        <li>Zeta Studios — optional team of engineers who already know the platform, builds at 2x speed per Zeta's own claim <span class="verified">✓ verified</span></li>
+      </ul>
+    </div>
+    <div class="card card-r">
+      <span class="label">What to Dig Into</span>
+      <ul>
+        <li>Does the sandbox replicate production edge cases, or just happy paths? A sandbox that only works perfectly is almost useless for real integration testing.</li>
+        <li>How good are the error messages when something goes wrong? Bad error messages = hours of debugging.</li>
+        <li>What happens if a webhook delivery fails? Is there a retry? An alert?</li>
+        <li>Can engineering teams do end-to-end testing without involving Zeta support?</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout">
+    <span class="c-label">Integration Complexity — Honest Assessment</span>
+    <p>Not everything is easy. Settlement file processing (the files that reconcile what happened each day) involves older financial formats and lots of edge cases. Digital wallet provisioning (Apple Pay, Google Pay) requires Apple and Google certifications that add weeks to timelines. These aren't Zeta-specific problems — they're just hard parts of card tech. The question is how well Zeta's documentation and support team prepares you for them.</p>
+  </div>
+</section>
+
+<!-- 08 COMPETITIVE -->
+<section id="compare" class="fade">
+  <div class="sec-head">
+    <span class="sec-num">08 /</span>
+    <h2>How does Zeta compare to the alternatives?</h2>
+  </div>
+
+  <p>Zeta competes in two directions at once. Against old-guard processors (TSYS, Fiserv), they compete on speed and modern UX. Against newer players (Marqeta), they compete on depth — Marqeta is great for fintechs but doesn't natively handle the full credit lifecycle the way Tachyon does.</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Platform</th>
+          <th>Their Strength</th>
+          <th>Their Weakness</th>
+          <th>Zeta's Pitch vs Them</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>TSYS / Fiserv</td>
+          <td>Scale, trust, deep bank relationships built over decades</td>
+          <td>Very slow to change. New features take quarters. High customization cost.</td>
+          <td>"Get modern speed without being trapped in legacy."</td>
+        </tr>
+        <tr>
+          <td>Marqeta</td>
+          <td>Beautiful APIs, fast fintech onboarding, strong developer experience</td>
+          <td>Doesn't natively cover the full credit card lifecycle — rewards, statements, disputes need other vendors</td>
+          <td>"End-to-end credit issuing, not just authorization."</td>
+        </tr>
+        <tr>
+          <td>Galileo</td>
+          <td>Good APIs, popular with US fintechs, reasonably priced</td>
+          <td>Breadth is thinner on the credit side; heavy on debit/prepaid history</td>
+          <td>"Deeper credit capabilities and richer real-time events."</td>
+        </tr>
+        <tr>
+          <td>Mambu</td>
+          <td>Flexible core banking — great for loans and accounts</td>
+          <td>Card processing and network integration isn't their core — needs separate processor</td>
+          <td>"Card-first platform with processing built in, not bolted on."</td>
+        </tr>
+        <tr>
+          <td>Thought Machine</td>
+          <td>Very modern architecture, loved by cloud-native banks</td>
+          <td>Card issuing and rewards depth requires additional integration work</td>
+          <td>"We own the card experience end-to-end, you don't have to stitch it together."</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <p><strong>Where Zeta's positioning gets complicated:</strong> The banks big enough to justify Zeta's migration investment are exactly the banks with the messiest legacy environments. And the fintechs with appetite for modern platforms often start small enough that Marqeta's simpler onboarding makes more sense at first. Zeta's sweet spot is mid-to-large issuers who are <em>already planning</em> a processor change for contractual or strategic reasons — not banks evaluating switching in isolation.</p>
+  </div>
+</section>
+
+<!-- 09 RISKS -->
+<section id="risks" class="fade">
+  <div class="sec-head">
+    <span class="sec-num">09 /</span>
+    <h2>What are the real risks?</h2>
+  </div>
+
+  <p>Zeta's risks aren't really about whether the technology works. The platform's architecture is credible. The risks cluster around <strong>migration</strong> — the process of moving a bank from their old system to Zeta — and whether the bank's own organization can actually use the new capabilities once they're live.</p>
+
+  <div class="risk-wrap">
+    <div class="risk-item">
+      <div class="risk-name">Migration execution</div>
+      <div class="bar-bg"><div class="bar-fill fill-high" style="width:90%"></div></div>
+      <div class="risk-tag tag-high">Critical</div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-name">Ledger data correctness</div>
+      <div class="bar-bg"><div class="bar-fill fill-high" style="width:82%"></div></div>
+      <div class="risk-tag tag-high">High</div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-name">Auth latency / uptime</div>
+      <div class="bar-bg"><div class="bar-fill fill-high" style="width:78%"></div></div>
+      <div class="risk-tag tag-high">High</div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-name">Bank adoption friction</div>
+      <div class="bar-bg"><div class="bar-fill fill-med" style="width:70%"></div></div>
+      <div class="risk-tag tag-med">Medium-High</div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-name">Config governance gaps</div>
+      <div class="bar-bg"><div class="bar-fill fill-med" style="width:60%"></div></div>
+      <div class="risk-tag tag-med">Medium</div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-name">Rewards logic errors</div>
+      <div class="bar-bg"><div class="bar-fill fill-med" style="width:55%"></div></div>
+      <div class="risk-tag tag-med">Medium</div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-name">Vendor lock-in (for the bank)</div>
+      <div class="bar-bg"><div class="bar-fill fill-low" style="width:40%"></div></div>
+      <div class="risk-tag tag-low">Low-Medium</div>
+    </div>
+  </div>
+
+  <h3>Why migration is the big one</h3>
+  <p>A bank with 5 million active credit cards can't just flip a switch. They need to move account by account, reconcile the old system and new system in parallel, and have a clear plan to roll back if something breaks. The scariest part isn't Zeta's code — it's that every legacy bank has decades of edge cases, exceptions, and informal workarounds that nobody fully documented. You only discover them when you try to move them.</p>
+
+  <div class="callout">
+    <span class="c-label">The hard truth about configurability</span>
+    <p>The same feature that lets a bank PM launch a new reward promo in hours can also create a regulatory pricing error or a fraud gap if there's no proper review process. <strong>More configurability = more responsibility on the bank to have governance in place.</strong> Many banks aren't set up for this — their processes assume changes go through IT, which has its own checks. Self-serve configurability requires a different kind of discipline.</p>
+  </div>
+</section>
+
+<!-- 10 METRICS -->
+<section id="kpis" class="fade">
+  <div class="sec-head">
+    <span class="sec-num">10 /</span>
+    <h2>What metrics should you track?</h2>
+  </div>
+
+  <p>The table below maps each metric to what it actually means, why it matters for the business, and what Zeta has publicly shared about it.</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Metric</th>
+          <th>What It Means (Plain English)</th>
+          <th>Why It Matters</th>
+          <th>Real Zeta Data?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>App response time</td>
+          <td>How fast does the mobile app respond to any customer action?</td>
+          <td>Slow apps lose users. Sparrow's is under 100ms, which is very fast.</td>
+          <td>✓ &lt;100ms on Sparrow</td>
+        </tr>
+        <tr>
+          <td>Card issuance time</td>
+          <td>How long from "approved" to "I have a working card"?</td>
+          <td>Instant issuance drives activation — if you can pay right away, you're more likely to use the card.</td>
+          <td>✓ Under 3 seconds for 97% of Sparrow applicants</td>
+        </tr>
+        <tr>
+          <td>Ops headcount savings</td>
+          <td>How many fewer support agents do you need?</td>
+          <td>Fewer agents = lower cost. This is where unified tooling pays off.</td>
+          <td>✓ ~30% reduction estimated for Sparrow</td>
+        </tr>
+        <tr>
+          <td>Authorization success rate</td>
+          <td>What % of legitimate transactions go through without being incorrectly declined?</td>
+          <td>False declines are trust-killers. Cardholders switch cards when theirs fails.</td>
+          <td>Not published by Zeta</td>
+        </tr>
+        <tr>
+          <td>Straight-through processing rate</td>
+          <td>What % of daily transactions reconcile automatically without manual work?</td>
+          <td>Low STP = high ops cost. Finance teams spending hours on exceptions is expensive.</td>
+          <td>Not published by Zeta</td>
+        </tr>
+        <tr>
+          <td>Activation rate</td>
+          <td>What % of new cardholders make their first transaction within 7 days?</td>
+          <td>Unactivated cards = missed revenue. Instant issuance helps this metric.</td>
+          <td>Not published by Zeta</td>
+        </tr>
+        <tr>
+          <td>Dispute resolution time</td>
+          <td>How many days does it take to fully resolve a cardholder dispute?</td>
+          <td>There are regulatory deadlines. Slow disputes also hurt customer satisfaction.</td>
+          <td>Not published by Zeta</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>For metrics marked "Not published by Zeta" — that's standard for B2B infrastructure companies. These numbers would be shared under NDA during a proper vendor evaluation. Knowing what to ask for is itself a signal of product depth.</p>
+</section>
+
+<!-- 11 RECOMMENDATIONS -->
+<section id="recs" class="fade">
+  <div class="sec-head">
+    <span class="sec-num">11 /</span>
+    <h2>What would I recommend if I were a PM here?</h2>
+  </div>
+
+  <div class="rec-grid">
+    <div class="rec">
+      <div class="rec-head">
+        <span class="rec-n">01</span>
+        <span class="rec-title">Treat migration tooling as a product, not a service</span>
+      </div>
+      <div class="rec-body">
+        <p>Right now, migration help likely lives in Zeta's professional services team. That's a bottleneck. If Zeta built a self-serve migration product — a dashboard that tracks account migration progress, flags data mismatches, and validates the new ledger against the old one — it would make every bank deal easier to close and less risky to deliver.</p>
+        <p><strong>Why this matters:</strong> Banks don't just evaluate your platform. They evaluate whether the move is survivable. A polished migration product is a sales tool as much as an ops tool.</p>
+      </div>
+    </div>
+    <div class="rec">
+      <div class="rec-head">
+        <span class="rec-n">02</span>
+        <span class="rec-title">Give banks real-time observability into their own program</span>
+      </div>
+      <div class="rec-body">
+        <p>When a bank's fraud rate spikes at 3pm on a Friday, the bank's risk team shouldn't need to file a ticket with Zeta to find out what's happening. They should have a dashboard showing authorization patterns, decline reasons, and error rates — in real time, for their own program.</p>
+        <p><strong>Why this matters:</strong> Trust. Banks need to feel in control of their own card program. Visibility is control.</p>
+      </div>
+    </div>
+    <div class="rec">
+      <div class="rec-head">
+        <span class="rec-n">03</span>
+        <span class="rec-title">Build guardrails into the configuration UI</span>
+      </div>
+      <div class="rec-body">
+        <p>Self-serve configuration is the core value proposition. But "anyone can change anything" is a liability at enterprise scale. The product needs: two-person approval for sensitive changes, a preview screen that shows what will be affected before you confirm, and a one-click rollback to the last working configuration.</p>
+        <p><strong>Why this matters:</strong> A misconfigured promo could mean a regulatory fine. Banks will only use self-serve if they trust it's safe.</p>
+      </div>
+    </div>
+    <div class="rec">
+      <div class="rec-head">
+        <span class="rec-n">04</span>
+        <span class="rec-title">Keep rewards computation out of the authorization path</span>
+      </div>
+      <div class="rec-body">
+        <p>Authorization needs to happen in milliseconds. Rewards calculations — especially complex promotional rules — should happen after the authorization, asynchronously. The two processes should never be dependent on each other in real time.</p>
+        <p><strong>Why this matters:</strong> If rewards logic slows down authorization even slightly, you get worse authorization performance. And in payments, even 50ms matters at scale.</p>
+      </div>
+    </div>
+    <div class="rec">
+      <div class="rec-head">
+        <span class="rec-n">05</span>
+        <span class="rec-title">Fix dispute collection — make it structured, not free-text</span>
+      </div>
+      <div class="rec-body">
+        <p>When a cardholder disputes a transaction, they shouldn't be typing a paragraph into a text box. They should be answering 3 structured questions that automatically map to the correct chargeback reason code. Less work for the cardholder, less manual work for ops, faster submission to Visa/Mastercard.</p>
+        <p><strong>Why this matters:</strong> Dispute resolution has regulatory SLA deadlines. Faster, cleaner inputs = fewer missed deadlines and lower ops cost.</p>
+      </div>
+    </div>
+    <div class="rec">
+      <div class="rec-head">
+        <span class="rec-n">06</span>
+        <span class="rec-title">Launch a certified implementation partner program</span>
+      </div>
+      <div class="rec-body">
+        <p>Large banks don't do their own implementations — they hire Accenture, TCS, Infosys, etc. If those firms aren't trained on Zeta, they become a bottleneck. A formal certification program with training materials, sandbox access, and reference implementations turns third-party integrators into a distribution channel.</p>
+        <p><strong>Why this matters:</strong> Zeta can't scale to every bank deal on its own. Certified partners are a force multiplier.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- end .page -->
+
+<!-- 12 VERDICT -->
+<section id="verdict" class="verdict-section fade">
+  <div class="page">
+    <div class="sec-head">
+      <span class="sec-num" style="color:var(--accent)">12 /</span>
+      <h2>Final Verdict</h2>
+    </div>
+
+    <div class="verdict-quote">
+      "Zeta's technology is genuinely better than what most banks are running today. The harder question is whether the bank on the other side of the deal is ready to move — not whether Zeta is ready to serve them."
+    </div>
+
+    <div class="verdict-cols">
+      <div>
+        <div class="v-col-label">Where Zeta Earns Its Reputation</div>
+        <ul>
+          <li>Real-time ledger is architecturally superior to batch-based legacy systems</li>
+          <li>Sparrow launched end-to-end in under 8 months — real proof of speed <span class="verified" style="background:rgba(232,245,238,0.15);border-color:rgba(184,223,196,0.3)">✓ verified</span></li>
+          <li>97% of applicants get instant card issuance in under 3 seconds <span class="verified" style="background:rgba(232,245,238,0.15);border-color:rgba(184,223,196,0.3)">✓ verified</span></li>
+          <li>Unified platform eliminates the biggest source of ops overhead in legacy card stacks</li>
+          <li>12M+ cardholders on HDFC's PayZapp shows it can scale <span class="verified" style="background:rgba(232,245,238,0.15);border-color:rgba(184,223,196,0.3)">✓ verified</span></li>
+        </ul>
+      </div>
+      <div>
+        <div class="v-col-label">Where the Work Still Lies</div>
+        <ul>
+          <li>Migration from legacy systems is the hardest, most risk-exposed part of the whole pitch</li>
+          <li>Banks' internal processes aren't set up to use self-serve configurability safely yet</li>
+          <li>Operational metrics beyond the Sparrow case study aren't public yet</li>
+          <li>The platform works best when the bank has a clear internal owner — "we bought Zeta" without that person is a recipe for underutilization</li>
+        </ul>
+      </div>
+    </div>
+
+    <p style="color:#908880;font-size:14px;margin-top:32px;line-height:1.7">The platform's long-term potential is real. Once a bank is on Zeta, switching costs are high and the operational benefits compound over time. The strategic bet Zeta is making — that banks will prioritize iteration speed over migration safety — is the right bet for the right banks. The task is finding those banks, and proving that the journey to get there is survivable.</p>
+  </div>
+</section>
+      </div><!-- /zeta-wrap -->
+    </div><!-- /td-zeta-full td-full-card -->
+        </div><!-- /td-expand-inner -->
+      </div><!-- /td-expand-body -->
+    </div><!-- /td-zeta-card -->
+
     <!-- ══════════════ RAZORPAY CARD ══════════════ -->
     <div class="td-expand-card" id="td-razorpay-card" onclick="toggleTeardown('td-razorpay-body','td-razorpay-card')">
       <div class="td-expand-top"></div>
       <div class="td-expand-preview">
         <div class="td-expand-brand">
-          <div class="td-expand-icon" style="background:linear-gradient(135deg,#dbeafe,#bfdbfe);border:1px solid rgba(37,99,235,0.20)">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke="#1A56DB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><polyline points="9 22 9 12 15 12 15 22" stroke="#1A56DB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="td-expand-icon" style="background:#ffffff;border:1px solid rgba(9,14,52,0.18);display:flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:10px;flex-shrink:0">
+            <svg width="44" height="20" viewBox="0 0 132 28" xmlns="http://www.w3.org/2000/svg">
+              <text x="0" y="22" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="22" fill="#090e34">R</text>
+              <text x="15" y="22" font-family="Arial,sans-serif" font-weight="700" font-size="18" fill="#090e34">azorpay</text>
+            </svg>
           </div>
           <div class="td-expand-info">
             <div class="td-expand-name">Razorpay</div>
@@ -1692,9 +3125,12 @@ footer{
     <div class="td-full-card" id="td-razorpay" style="border:none;padding:0;margin:0;border-radius:0;background:transparent">
       <div class="td-full-header">
         <div class="td-full-brand">
-          <div class="td-brand-logo" style="background:linear-gradient(135deg,#072654,#0d47a1);border:1px solid rgba(13,71,161,0.4)">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke="#60a5fa" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><polyline points="9 22 9 12 15 12 15 22" stroke="#60a5fa" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
+          <div class="td-brand-logo" style="background:#ffffff;border:1px solid rgba(9,14,52,0.22);display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:12px;flex-shrink:0">
+              <svg width="46" height="22" viewBox="0 0 132 28" xmlns="http://www.w3.org/2000/svg">
+                <text x="0" y="22" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="22" fill="#090e34">R</text>
+                <text x="15" y="22" font-family="Arial,sans-serif" font-weight="700" font-size="18" fill="#090e34">azorpay</text>
+              </svg>
+            </div>
           <div>
             <div class="td-full-name">Razorpay</div>
             <div class="td-full-meta">Fintech · Payment Infrastructure · B2B SaaS · India's Leading Payment OS</div>
@@ -2292,8 +3728,10 @@ footer{
       <div class="td-expand-top" style="background:linear-gradient(90deg,var(--accent2),var(--teal))"></div>
       <div class="td-expand-preview">
         <div class="td-expand-brand">
-          <div class="td-expand-icon" style="background:linear-gradient(135deg,#ede9fe,#ddd6fe);border:1px solid rgba(109,40,217,0.18)">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M22 10v6M2 10l10-5 10 5-10 5z" stroke="#6D28D9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 12v5c3 3 9 3 12 0v-5" stroke="#6D28D9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="td-expand-icon" style="background:#0f1117;border:1px solid rgba(129,140,248,0.35);display:flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:10px;flex-shrink:0">
+            <svg width="44" height="20" viewBox="0 0 118 26" xmlns="http://www.w3.org/2000/svg">
+              <text x="0" y="20" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="20" fill="#818cf8">Scaler</text>
+            </svg>
           </div>
           <div class="td-expand-info">
             <div class="td-expand-name">Scaler Academy</div>
@@ -2315,9 +3753,11 @@ footer{
     <div class="td-full-card" id="td-scaler" style="margin-top:0;border:none;padding:0;margin:0;border-radius:0;background:transparent">
       <div class="td-full-header">
         <div class="td-full-brand">
-          <div class="td-brand-logo" style="background:linear-gradient(135deg,#1a1a2e,#16213e);border:1px solid rgba(99,102,241,0.4)">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M22 10v6M2 10l10-5 10 5-10 5z" stroke="#818cf8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 12v5c3 3 9 3 12 0v-5" stroke="#818cf8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
+          <div class="td-brand-logo" style="background:#0f1117;border:1px solid rgba(129,140,248,0.40);display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:12px;flex-shrink:0">
+              <svg width="46" height="22" viewBox="0 0 118 26" xmlns="http://www.w3.org/2000/svg">
+                <text x="0" y="21" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="21" fill="#818cf8">Scaler</text>
+              </svg>
+            </div>
           <div>
             <div class="td-full-name">Scaler Academy</div>
             <div class="td-full-meta">EdTech · Outcome-based Learning · B2C SaaS · India's Premium Tech Upskilling Platform</div>
